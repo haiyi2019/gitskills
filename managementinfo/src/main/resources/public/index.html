@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jQuery.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			td {text-align:center}
+		</style>
+		<script type="text/javascript">
+			
+			var page=1;
+			var temp=0;
+			var pageSize=8;
+			var tp = 0;
+			
+			$(function () {
+				count();
+			})
+
+			function count()
+			{
+				$.ajax({
+					url:'http://localhost:8081/count',
+					success:function (result) {
+						console.log(result);
+							temp=parseInt(result/pageSize)+1;
+					}
+				});
+			}
+
+			// $(function () {
+			// 	showData();
+			// });
+
+			$(function () {
+				showData1();
+			});
+			
+			function upPage(){
+				console.log(page);
+				if(page>1){
+					page--;
+					showData();
+				}
+				else
+				{
+					alert("已经到首页了！");
+				}
+			}
+			
+			function downPage(){
+				console.log(page);
+				if(page<temp){
+					page++;
+					showData();
+				}else{
+					alert("已经到尾页了！")
+				}
+				
+			}
+			
+			// function showData(){
+			// 	$.ajax({
+			// 		url:'http://localhost:8081/query?page='+page,
+			// 		// url:'http://localhost:8081/query',
+			// 		success:function(result){
+			// 			console.log(result);
+			// 			var rel = result.content;
+			// 			tp = result.totalPages;
+			//
+			// 			var htmlStr = "<table  align='center' border='1'>"+
+			// 						"<tr><th width='200px' height='50px'>ID</th><th width='200px' height='50px'>姓名</th><th width='200px'height='50px'>班级</th><th width='200px'>年龄</th><th width='200px'>性别</th><th width='200px'>操作</th></tr>";
+			//
+			// 			for(var i=0;i<result.length;i++){
+			//
+			// 				htmlStr += "<tr><td >"+result[i].id+"</td><td>"+result[i].name+"</td><td>"+result[i].classId+"</td><td>"+result[i].age+"</td><td>"+result[i].sex+"</td>"+
+			//
+			// 						"<td><form action='http://localhost:8081/modify.html?id="+result[i].id+"'>" +
+			//
+			// 						"<input type='submit' value='修改'></form>"+
+			//
+			// 				"<form action='http://localhost:8081/del/"+result[i].id+"' method='post'><input type='submit' value='删除'></form></td></tr>";
+			// 			}
+			//
+			// 			htmlStr += "</table>";
+			//
+			// 			$("#show").html(htmlStr);
+			// 		}
+			// 	});
+			// }
+
+			function showData1(){
+				$.ajax({
+					url:'http://localhost:8081/query1',
+					success:function(result){
+						console.log(result);
+						var rel = result.content;
+
+
+						var htmlStr = "<table  align='center' border='1'>"+
+								"<tr><th width='200px' height='50px'>ID</th><th width='200px' height='50px'>班级</th><th width='200px'height='50px'>班主任</th><th width='200px'>学生人数</th><th width='200px'>操作</th></tr>";
+
+						for(var i=0;i<result.length;i++){
+
+							htmlStr += "<tr><td >"+result[i].id+"</td><td>"+result[i].name+"</td><td>"+result[i].mentor+"</td><td>"+result[i].stuNum+"</td>"+
+
+									"<td><form action='http://localhost:8081/modify.html?id="+result[i].id+"'>" +
+
+									"<input type='submit' value='修改'></form>"+
+
+									"<form action='http://localhost:8081/del/"+result[i].id+"' method='post'><input type='submit' value='删除'></form></td></tr>";
+						}
+
+						htmlStr += "</table>";
+
+						$("#showclass").html(htmlStr);
+					}
+				});
+			}
+
+		</script>
+		
+	</head>
+	<body>
+
+		<h1 style="text-align: center;">班级管理系统</h1>
+		<hr>
+		<a href="add.html" style="padding-left: 430px;width: 10px;height: 10px">添加班级</a>
+		<div id="showclass" style="padding-top: 2px;">
+
+		</div>
+
+		
+<!--		<div id="show"  style="padding-top: 2px;">-->
+<!--			-->
+<!--		</div>-->
+		<div>
+			<a href="javascript:upPage();" style="padding-left: 430px">上一页</a>&nbsp;&nbsp;<a href="javascript:downPage();">下一页</a>
+			<a href="select.html">查询</a>
+			<a href="students.html" style="padding-left:780px;width: 20px;height: 20px">学生管理系统</a>
+		</div>
+
+
+
+
+	</body>
+</html>
