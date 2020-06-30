@@ -105,11 +105,11 @@
 
 							htmlStr += "<tr><td >"+result[i].id+"</td><td>"+result[i].name+"</td><td>"+result[i].mentor+"</td><td>"+result[i].stuNum+"</td>"+
 
-									"<td><form action='http://localhost:8081/modify.html?id="+result[i].id+"'>" +
+									"<td><form action='http://localhost:8081/modify1.html?id="+result[i].id+"'>" +
 
 									"<input type='submit' value='修改'></form>"+
 
-									"<form action='http://localhost:8081/del/"+result[i].id+"' method='post'><input type='submit' value='删除'></form></td></tr>";
+									"<form action='http://localhost:8081/del1/"+result[i].id+"' method='post'><input type='submit' value='删除'></form></td></tr>";
 						}
 
 						htmlStr += "</table>";
@@ -126,7 +126,7 @@
 
 		<h1 style="text-align: center;">班级管理系统</h1>
 		<hr>
-		<a href="add.html" style="padding-left: 430px;width: 10px;height: 10px">添加班级</a>
+		<a href="add1.html" style="padding-left: 430px;width: 10px;height: 10px">添加班级</a>
 		<div id="showclass" style="padding-top: 2px;">
 
 		</div>
@@ -137,7 +137,7 @@
 <!--		</div>-->
 		<div>
 			<a href="javascript:upPage();" style="padding-left: 430px">上一页</a>&nbsp;&nbsp;<a href="javascript:downPage();">下一页</a>
-			<a href="select.html">查询</a>
+			<a href="select1.html">查询</a>
 			<a href="students.html" style="padding-left:780px;width: 20px;height: 20px">学生管理系统</a>
 		</div>
 

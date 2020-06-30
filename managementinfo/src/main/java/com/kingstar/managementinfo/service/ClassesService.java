@@ -9,4 +9,5 @@ public interface ClassesService {
     void deleteById(Integer id);
     Classes save(Classes classes);
     Classes update(Classes classes);
+    Classes findClassesById(Integer id);
 }

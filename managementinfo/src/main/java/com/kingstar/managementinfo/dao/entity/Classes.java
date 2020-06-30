@@ -10,6 +10,8 @@ public class Classes {
     private int id;
     @Column(name="name")
     private String name;
+    @Column(name="mentor")
+    private String mentor;
     @Column(name="stuNum")
     private int stuNum;
 
@@ -29,8 +31,7 @@ public class Classes {
         this.mentor = mentor;
     }
 
-    @Column(name="mentor")
-    private String mentor;
+
 
     public Classes() {
     }
@@ -56,6 +57,8 @@ public class Classes {
         return "Classes{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", mentor='" + mentor + '\'' +
+                ", stuNum=" + stuNum +
                 '}';
     }
 }

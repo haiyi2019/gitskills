@@ -18,10 +18,10 @@ public class StudentsController {
 
 
     @PostMapping("/add")
-    public Students save(Students students)
+    public void save(Students students)
     {
 
-        return studentsService.save(students);
+        studentsService.save(students);
     }
 
     @PostMapping("/update")

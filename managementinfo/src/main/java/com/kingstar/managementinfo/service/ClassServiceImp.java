@@ -32,4 +32,9 @@ public class ClassServiceImp implements ClassesService {
     public Classes update(Classes classes) {
         return classesDao.save(classes);
     }
+
+    @Override
+    public Classes findClassesById(Integer id) {
+        return classesDao.findClassesById(id);
+    }
 }
