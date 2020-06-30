@@ -21,7 +21,7 @@
 			function count()
 			{
 				$.ajax({
-					url:'http://localhost:8081/count',
+					url:'http://localhost:8081/count1',
 					success:function (result) {
 						console.log(result);
 							temp=parseInt(result/pageSize)+1;
@@ -29,9 +29,6 @@
 				});
 			}
 
-			// $(function () {
-			// 	showData();
-			// });
 
 			$(function () {
 				showData1();
@@ -41,7 +38,7 @@
 				console.log(page);
 				if(page>1){
 					page--;
-					showData();
+					showData1();
 				}
 				else
 				{
@@ -53,50 +50,20 @@
 				console.log(page);
 				if(page<temp){
 					page++;
-					showData();
+					showData1();
 				}else{
 					alert("已经到尾页了！")
 				}
 				
 			}
 			
-			// function showData(){
-			// 	$.ajax({
-			// 		url:'http://localhost:8081/query?page='+page,
-			// 		// url:'http://localhost:8081/query',
-			// 		success:function(result){
-			// 			console.log(result);
-			// 			var rel = result.content;
-			// 			tp = result.totalPages;
-			//
-			// 			var htmlStr = "<table  align='center' border='1'>"+
-			// 						"<tr><th width='200px' height='50px'>ID</th><th width='200px' height='50px'>姓名</th><th width='200px'height='50px'>班级</th><th width='200px'>年龄</th><th width='200px'>性别</th><th width='200px'>操作</th></tr>";
-			//
-			// 			for(var i=0;i<result.length;i++){
-			//
-			// 				htmlStr += "<tr><td >"+result[i].id+"</td><td>"+result[i].name+"</td><td>"+result[i].classId+"</td><td>"+result[i].age+"</td><td>"+result[i].sex+"</td>"+
-			//
-			// 						"<td><form action='http://localhost:8081/modify.html?id="+result[i].id+"'>" +
-			//
-			// 						"<input type='submit' value='修改'></form>"+
-			//
-			// 				"<form action='http://localhost:8081/del/"+result[i].id+"' method='post'><input type='submit' value='删除'></form></td></tr>";
-			// 			}
-			//
-			// 			htmlStr += "</table>";
-			//
-			// 			$("#show").html(htmlStr);
-			// 		}
-			// 	});
-			// }
 
 			function showData1(){
 				$.ajax({
-					url:'http://localhost:8081/query1',
+					url:'http://localhost:8081/query1?page='+page,
 					success:function(result){
 						console.log(result);
 						var rel = result.content;
-
 
 						var htmlStr = "<table  align='center' border='1'>"+
 								"<tr><th width='200px' height='50px'>ID</th><th width='200px' height='50px'>班级</th><th width='200px'height='50px'>班主任</th><th width='200px'>学生人数</th><th width='200px'>操作</th></tr>";
