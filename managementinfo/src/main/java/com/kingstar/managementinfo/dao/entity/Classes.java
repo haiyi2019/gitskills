@@ -9,6 +9,7 @@ import javax.persistence.*;
 /**
  * @className: Classes
  * @description: 这是班级类，映射数据库对应classes表
+ * @author :haiyi_zq
  */
 @Entity
 @Table(name = "Classes")

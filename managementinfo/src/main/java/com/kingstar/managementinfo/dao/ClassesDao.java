@@ -14,6 +14,7 @@ import java.util.Optional;
 /**
  * @interfaceName: ClassesDao
  * @description: 这是班级类数据访问对象接口
+ * @author :haiyi_zq
  */
 @Repository
 public interface ClassesDao extends JpaRepository<Classes,Integer> {

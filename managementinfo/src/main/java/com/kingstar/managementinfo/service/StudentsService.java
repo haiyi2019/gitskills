@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * @interfaceName: StudentsServices
  * @description: 这是学生类数据处理接口
+ * @author :haiyi_zq
  */
 public interface StudentsService {
     /**

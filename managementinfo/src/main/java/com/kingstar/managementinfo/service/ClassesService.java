@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * @interfaceName: ClassesServices
  * @description: 这是班级类数据处理接口
+ * @author :haiyi_zq
  */
 public interface ClassesService {
     /**

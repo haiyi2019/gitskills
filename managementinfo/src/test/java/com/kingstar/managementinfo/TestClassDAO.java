@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 /**
  * @description ClassDAO测试类
- *
+ * @author :haiyi_zq
  */
 @SpringBootTest
 public class TestClassDAO {
@@ -27,7 +27,7 @@ public class TestClassDAO {
     }
 
     /**
-     * @description 测试按ID删除
+     * @description  测试按ID删除
      */
     @Test
     public void testDeleteById(){

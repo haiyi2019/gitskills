@@ -15,6 +15,7 @@ import java.util.List;
 /**
  * @interfaceName: StudentsDao
  * @description: 这是学生类数据访问对象接口
+ * @author :haiyi_zq
  */
 @Repository
 public interface StudentsDao extends JpaRepository<Students,Integer> {
