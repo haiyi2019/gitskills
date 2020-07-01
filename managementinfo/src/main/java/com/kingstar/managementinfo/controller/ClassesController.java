@@ -25,12 +25,11 @@ public class ClassesController {
     /**
      * @description 给classes数据表添加一条数据
      * @param classes
-     * @return Classes
      */
     @ApiOperation("新增班级接口")
     @PostMapping("/add")
-    public  Classes add(Classes classes){
-        return  classesService.save(classes);
+    public  void add(Classes classes){
+         classesService.save(classes);
     }
     /**
      * @description 删除一条数据
@@ -48,12 +47,13 @@ public class ClassesController {
     /**
      * @description 更新一条数据
      * @param classes
-     * @return Classes
+
      */
     @ApiOperation("更新一条信息接口")
     @PutMapping("/update")
-    public Classes update(Classes classes){
-        return classesService.save(classes);
+    public void update(Classes classes){
+
+        classesService.save(classes);
     }
 
     /**

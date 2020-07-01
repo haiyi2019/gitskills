@@ -39,8 +39,8 @@ public class TestClassesService {
     @Test
     public void testSave(){
         Classes classes = new Classes(6, "电气工程", "LTeacher", 0);
-        Classes result = classesService.save(classes);
-        System.out.println(result);
+        classesService.save(classes);
+
     }
 
     /**
@@ -49,8 +49,7 @@ public class TestClassesService {
     @Test
     public void  testUpdate(){
         Classes classes = new Classes(6, "电气工程", "NTeacher", 0);
-        Classes result = classesService.update(classes);
-        System.out.println(result);
+       classesService.update(classes);
     }
 
     /**

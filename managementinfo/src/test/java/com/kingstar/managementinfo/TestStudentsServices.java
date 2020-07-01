@@ -20,8 +20,8 @@ public class TestStudentsServices {
     @Test
     public void testSave(){
         Students students = new Students(13, "lisi", 3, 23, "男", "");
-        Students stu = studentsService.save(students);
-        System.out.println(stu);
+        studentsService.save(students);
+
     }
 
     /**

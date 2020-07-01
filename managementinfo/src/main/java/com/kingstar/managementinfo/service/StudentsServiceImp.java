@@ -24,20 +24,27 @@ public class StudentsServiceImp implements StudentsService {
 
     /**申明List<Students>**/
     private List<Students> list;
+
+    /**
+     * 所添加学生信息
+     * @param students
+     */
     @Override
-    public Students save(Students students) {
-        return studentsDao.save(students);
+    public void save(Students students) {
+        studentsDao.save(students);
+        studentsDao.update(students.getClassId(), students.getId());
+
     }
 
     /**
      *
      * @param students
-     * @return 所更新的学生信息
+     * 所更新的学生信息
      */
     @Override
-    public Students update(Students students) {
-
-            return studentsDao.save(students);
+    public void update(Students students) {
+        studentsDao.save(students);
+        studentsDao.update(students.getClassId(), students.getId());
     }
 
     /**

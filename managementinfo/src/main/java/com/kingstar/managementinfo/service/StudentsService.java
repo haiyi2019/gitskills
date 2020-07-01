@@ -13,17 +13,16 @@ public interface StudentsService {
     /**
      *
      * @param students
-     * @return 所添加的学生信息
+     * 所添加的学生信息
      */
-    Students save(Students students);
+    void save(Students students);
 
     /**
      *
      * @param students
-     * @return 所更新的学生信息
+     * 所更新的学生信息
      */
-    Students update(Students students);
-
+    void update(Students students);
     /**
      *
      * @param id

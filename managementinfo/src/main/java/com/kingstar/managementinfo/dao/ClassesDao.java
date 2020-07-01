@@ -41,6 +41,10 @@ public interface ClassesDao extends JpaRepository<Classes,Integer> {
     @Query(value="update classes c  set c.stu_num=(select count(*) from students s where s.class_id=c.id)",nativeQuery =true)
     void update();
 
+    @Transactional
+    @Modifying(clearAutomatically = true)
+    @Query(value="update classes c  set c.stu_num=(select count(*) from students s where s.class_id=c.id) where c.id=?1",nativeQuery =true)
+    void update(Integer id);
     /**
      *
      * @return 返回当前classes数据表中多少条记录

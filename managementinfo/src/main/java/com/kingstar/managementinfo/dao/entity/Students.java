@@ -63,17 +63,17 @@ public class Students {
      *
      * @return className
      */
-    public String getClassName() {
-        return className;
-    }
+//    public String getClassName() {
+//        return className;
+//    }
 
     /**
      *
      * @param className
      */
-    public void setClassName(String className) {
-        this.className = className;
-    }
+//    public void setClassName(String className) {
+//        this.className = className;
+//    }
 
     /**
      *

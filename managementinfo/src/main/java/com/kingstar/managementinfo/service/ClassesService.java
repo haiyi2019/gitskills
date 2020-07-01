@@ -26,16 +26,16 @@ public interface ClassesService {
     /**
      *
      * @param classes
-     * @return 所添加信息记录
+     * 所添加信息记录
      */
-    Classes save(Classes classes);
+    void save(Classes classes);
 
     /**
      *
      * @param classes
-     * @return 所更新信息记录
+     *  所更新信息记录
      */
-    Classes update(Classes classes);
+    void update(Classes classes);
 
     /**
      *

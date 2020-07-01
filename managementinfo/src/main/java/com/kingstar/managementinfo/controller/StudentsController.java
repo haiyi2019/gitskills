@@ -46,16 +46,17 @@ public class StudentsController {
         studentsService.delete(id);
         return "delete success!";
     }
+
     /**
      * @description 更新一条数据
      * @param students
-     * @return Students
+
      */
     @ApiOperation("更新一条信息接口")
     @PutMapping("/update")
-    public Students update(Students students)
+    public void update(Students students)
     {
-        return studentsService.update(students);
+         studentsService.update(students);
     }
 
     /**
@@ -75,7 +76,7 @@ public class StudentsController {
     /**
      * @descripton 根据学生姓名查询学生信息
      * @param name
-     * @return
+     * @return List<Students>
      */
     @ApiOperation("根据学生姓名查询信息接口")
     @GetMapping("/findByName")

@@ -34,17 +34,17 @@ public class Classes {
      * @description
      * @return 返回学生人数
      */
-    public int getStuNum() {
-        return stuNum;
-    }
-
-    /**
-     *
-     * @param stuNum
-     */
-    public void setStuNum(int stuNum) {
-        this.stuNum = stuNum;
-    }
+//    public int getStuNum() {
+//        return stuNum;
+//    }
+//
+//    /**
+//     *
+//     * @param stuNum
+//     */
+//    public void setStuNum(int stuNum) {
+//        this.stuNum = stuNum;
+//    }
 
     /**
      *

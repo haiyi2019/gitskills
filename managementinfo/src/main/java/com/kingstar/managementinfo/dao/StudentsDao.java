@@ -7,8 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 /**
  * @interfaceName: StudentsDao
@@ -72,4 +74,9 @@ public interface StudentsDao extends JpaRepository<Students,Integer> {
     @Modifying(clearAutomatically = true)
     @Query(nativeQuery = true,value="update students s  set s.class_name=(select c.name from classes c where c.id=s.class_id)")
     void update();
+
+    @Transactional
+    @Modifying(clearAutomatically = true)
+    @Query(nativeQuery = true,value="update students s set s.class_name=(select c.name from classes c where c.id=?1) where s.id=?2")
+    void update(Integer class_id,Integer id);
 }

@@ -58,27 +58,29 @@ public class ClassServiceImp implements ClassesService {
     /**
      *
      * @param classes
-     * @return 所添加数据信息
+     * 所添加数据信息
      */
     @Override
-    public Classes save(Classes classes) {
-        return classesDao.save(classes);
+    public void save(Classes classes) {
+        classesDao.save(classes);
+        classesDao.update(classes.getId());
     }
 
     /**
      *
      * @param classes
-     * @return 所更新数据信息
+     * 所更新数据信息
      */
     @Override
-    public Classes update(Classes classes) {
-        return classesDao.save(classes);
+    public void update(Classes classes) {
+        classesDao.save(classes);
+        classesDao.update(classes.getId());
     }
 
     /**
      *
      * @param id
-     * @return 所查询数据信息
+     * 所查询数据信息
      */
     @Override
     public Classes findClassesById(Integer id) {
