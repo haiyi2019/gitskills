@@ -42,6 +42,7 @@ public class ClassesController {
     public String delete(@PathVariable int id)
     {
         classesService.deleteById(id);
+        System.out.println(id);
         return "delete success!";
     }
 
