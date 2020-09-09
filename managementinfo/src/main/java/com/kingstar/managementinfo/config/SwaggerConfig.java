@@ -33,8 +33,8 @@ public class SwaggerConfig {
                 .build()
                 .apiInfo(apiInfo());
     }
-    @org.jetbrains.annotations.NotNull
-    @org.jetbrains.annotations.Contract(" -> new")
+//    @org.jetbrains.annotations.NotNull
+//    @org.jetbrains.annotations.Contract(" -> new")
     private ApiInfo apiInfo() {
         return new ApiInfo("SpringBoot项目集成",
                     "班级学生管理 Swagger 实例文档",

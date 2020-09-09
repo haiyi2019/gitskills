@@ -8,8 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
- * @description ClassDAO测试类
- * @author :haiyi_zq
+ *
  */
 @SpringBootTest
 public class TestClassDAO {
